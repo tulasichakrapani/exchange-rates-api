@@ -22,8 +22,8 @@ name: $(Date:yyyyMMdd)$(Rev:rr)
 variables:
 - name: jdkVersion
   value: '1.8'  
-- name: referencePipelineFeed
-  value: 'referencePipelineFeed'   
+- name: referencePipeline
+  value: 'referencePipeline'   
 #- name: orgPrefix
 #  value: 'avio' 
 - name: developBranch
@@ -71,7 +71,7 @@ stages:
     - task: MavenAuthenticate@0
       displayName: 'Get Feed Credentials'  
       inputs:
-        artifactsFeeds: '$(referencePipelineFeed)'
+        artifactsFeeds: '$(referencePipeline)'
         MavenServiceConnections: 'avio-snapshots'
     - task: Maven@3
       displayName: 'Set Version'

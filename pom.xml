@@ -40,11 +40,9 @@
 						<environment>${environment}</environment>
 						<workerType>${workerType}</workerType>
 						<workers>${workers}</workers>
-						<businessGroupId>${businessGroupId}</businessGroupId>
+						<businessGroup>Guest</businessGroup>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
-							<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
-							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
 							<anypoint.platform.config.analytics.agent.enabled>true</anypoint.platform.config.analytics.agent.enabled>
 						</properties>
 					</cloudHubDeployment>
@@ -108,13 +106,13 @@
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
-			<id>referencePipelineFeed</id>
-			<name>referencePipelineFeed</name>
+			<id>referencePipeline</id>
+			<name>referencePipeline</name>
 			<url>https://pkgs.dev.azure.com/tchakrapani/azure-reference-pipeline/_packaging/referencePipeline/maven/v1</url>
 		</repository>
 		<snapshotRepository>
-			<id>referencePipelineFeed</id>
-			<name>referencePipelineFeed</name>
+			<id>referencePipeline</id>
+			<name>referencePipeline</name>
 			<url>https://pkgs.dev.azure.com/tchakrapani/azure-reference-pipeline/_packaging/referencePipeline/maven/v1</url>
 		</snapshotRepository>
 	</distributionManagement>
