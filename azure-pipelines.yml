@@ -32,8 +32,8 @@ variables:
   value: 'develop'
 - name: mainBranch
   value: 'master' 
-- name: mavenServiceConnections
-  value: 'avio-snapshots'  
+#- name: mavenServiceConnections
+#  value: 'avio-snapshots'  
 - name: anypointUsername
   value: 'guest_account3' 
 - name: anypointPassword
@@ -74,7 +74,7 @@ stages:
       displayName: 'Get Feed Credentials'  
       inputs:
         artifactsFeeds: '$(referencePipeline)'
-        MavenServiceConnections: 'avio-snapshots'
+#        MavenServiceConnections: 'avio-snapshots'
     - task: Maven@3
       displayName: 'Set Version'
       condition: eq(variables['Build.SourceBranch'], variables['developBranch'])

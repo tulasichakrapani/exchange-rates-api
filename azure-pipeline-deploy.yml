@@ -16,7 +16,7 @@ jobs:
                   displayName: 'Initi: Authenticate setup'
                   inputs:
                     artifactsFeeds: 'referencePipeline'
-                    MavenServiceConnections: 'avio-snapshots'  
+#                    MavenServiceConnections: 'avio-snapshots'  
                 - task: PowerShell@2
                   displayName: 'Update Build Number'
                   inputs:
