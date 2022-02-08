@@ -83,6 +83,16 @@
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+			<id>referencePipeline</id>
+			<url>https://pkgs.dev.azure.com/tchakrapani/azure-reference-pipeline/_packaging/referencePipeline/maven/v1</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -100,12 +110,12 @@
 		<repository>
 			<id>referencePipelineFeed</id>
 			<name>referencePipelineFeed</name>
-			<url>https://pkgs.dev.azure.com/tchakrapani/Reference-Pipeline/_packaging/referencePipelineFeed/maven/v1</url>
+			<url>https://pkgs.dev.azure.com/tchakrapani/azure-reference-pipeline/_packaging/referencePipeline/maven/v1</url>
 		</repository>
 		<snapshotRepository>
 			<id>referencePipelineFeed</id>
 			<name>referencePipelineFeed</name>
-			<url>https://pkgs.dev.azure.com/tchakrapani/Reference-Pipeline/_packaging/referencePipelineFeed/maven/v1</url>
+			<url>https://pkgs.dev.azure.com/tchakrapani/azure-reference-pipeline/_packaging/referencePipeline/maven/v1</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
