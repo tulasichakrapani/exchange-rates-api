@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config"
+		doc:name="HTTP Listener config"
+		doc:id="28babef6-ad30-4678-a240-871dbb441047">
+		<http:listener-connection host="0.0.0.0"
+			port="${http.port}" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="35176f71-54d8-4674-827d-6f9fbc41e111" basePath="/api" >
+		<http:request-connection protocol="HTTPS" host="api.coingecko.com" />
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="32aa27a5-0043-4ca9-9c8e-8acac217e279" file="common.properties" />
+	<flow name="exchange-rates-apiFlow" doc:id="37b4416f-359d-4fa7-bcb1-11a0f43e6dd6" >
+		<http:listener doc:name="Listener" doc:id="024d4638-64e1-4493-bf8a-6f1858aaae34" config-ref="HTTP_Listener_config" path="/api/*"/>
+		<http:request method="GET" doc:name="Exchange Rates" doc:id="13ede0dc-a52f-4509-982f-f44dc1583e27" config-ref="HTTP_Request_configuration" path="/v3/exchange_rates"/>
+		<ee:transform doc:name="Transform Message" doc:id="8888f45e-6ade-42d9-a5d0-3999f43912c6" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
