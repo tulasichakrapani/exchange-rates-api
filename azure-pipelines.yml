@@ -46,6 +46,8 @@ variables:
   value: 'tchakrapani@avioconsulting.com' 
 - name: username
   value: 'tchakrapani'
+- name: muleVersion
+  value: '4.4.0'
 - name: MAVEN_CACHE_FOLDER
   value: $(Pipeline.Workspace)/.m2/repository
 - name: MAVEN_COMMON_OPTIONS

@@ -39,5 +39,5 @@ jobs:
                   displayName: 'Deploy'
                   inputs:
                     workingDirectory: $(System.DefaultWorkingDirectory)/
-                    goals: '-Denvironment=$(environment) -DapplicationName=$(orgPrefix)-$(appArtifactId)-$(environment) -DworkerType=$(workerType) -Dcloudhub.username=$(anypointUsername) -Danypoint.businessGroup="$(businessGroup)"-Dcloudhub.password=$(anypointPassword) -Dmule.artifact=$(appArtifactId)-$(appVersion)-mule-application.jar mule:deploy '
+                    goals: '-Denvironment=$(environment) -DapplicationName=$(orgPrefix)-$(appArtifactId)-$(environment) -DworkerType=$(workerType) -DmuleVersion=$(muleVersion) -Dcloudhub.username=$(anypointUsername) -Danypoint.businessGroup="$(businessGroup)"-Dcloudhub.password=$(anypointPassword) -Dmule.artifact=$(appArtifactId)-$(appVersion)-mule-application.jar mule:deploy '
                     options: $(MAVEN_COMMON_OPTIONS) 
