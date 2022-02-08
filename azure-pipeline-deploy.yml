@@ -16,7 +16,7 @@ jobs:
                   displayName: 'Initi: Authenticate setup'
                   inputs:
                     artifactsFeeds: 'referencePipelineFeed'
-                    MavenServiceConnections: 'anypoint-exchange, avio-mule-ee-releases, avio-releases, mulesoft-releases'  
+                    MavenServiceConnections: 'avio-snapshots'  
                 - task: PowerShell@2
                   displayName: 'Update Build Number'
                   inputs:
