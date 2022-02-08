@@ -130,7 +130,7 @@ stages:
 
 # Stage for Deploying your application
 - stage: Release_Stage_DEV
-  displayName: Deploy to DEV
+  displayName: Deploy to Sandbox
   dependsOn: 
   - Build_Stage
   condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
@@ -138,7 +138,7 @@ stages:
   - job: Deploy_to_DEV
   - template: azure-pipeline-deploy.yml
     parameters:
-      environment: DEV
+      environment: Sandbox
       appArtifactId: $[ stageDependencies.Build_Stage.Build_and_Publish.outputs['ValidateVar.appArtifactId'] ]
       appVersion: $[ stageDependencies.Build_Stage.Build_and_Publish.outputs['ValidateVar.appVersion'] ]
       appGroupId: $[ stageDependencies.Build_Stage.Build_and_Publish.outputs['ValidateVar.appGroupId'] ]

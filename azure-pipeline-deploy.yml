@@ -35,9 +35,9 @@ jobs:
                     SourceFolder: '$(Pipeline.Workspace)/drop'
                     Contents: 'pom.xml'
                     TargetFolder: '$(System.DefaultWorkingDirectory)' 
-                # - task: Maven@3
-                #   displayName: 'Deploy'
-                #   inputs:
-                #     workingDirectory: $(System.DefaultWorkingDirectory)/
-                #     goals: '-Denvironment=$(environment) -DapplicationName=$(orgPrefix)-$(appArtifactId)-$(environment) -DworkerType=$(workerType) -Dcloudhub.username=$(anypointUsername) -Danypoint.businessGroup="$(businessGroup)"-Dcloudhub.password=$(anypointPassword) -Dmule.artifact=$(appArtifactId)-$(appVersion)-mule-application.jar mule:deploy '
-                #     options: $(MAVEN_COMMON_OPTIONS) 
+                - task: Maven@3
+                  displayName: 'Deploy'
+                  inputs:
+                    workingDirectory: $(System.DefaultWorkingDirectory)/
+                    goals: '-Denvironment=$(environment) -DapplicationName=$(orgPrefix)-$(appArtifactId)-$(environment) -DworkerType=$(workerType) -Dcloudhub.username=$(anypointUsername) -Danypoint.businessGroup="$(businessGroup)"-Dcloudhub.password=$(anypointPassword) -Dmule.artifact=$(appArtifactId)-$(appVersion)-mule-application.jar mule:deploy '
+                    options: $(MAVEN_COMMON_OPTIONS) 
