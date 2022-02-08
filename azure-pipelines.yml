@@ -33,7 +33,7 @@ variables:
 - name: mainBranch
   value: 'master' 
 - name: mavenServiceConnections
-  value: 'anypoint-exchange, avio-mule-ee-releases, avio-releases, mulesoft-releases'  
+  value: 'avio-snapshots'  
 - name: anypointUsername
   value: 'guest_account3' 
 - name: anypointPassword
@@ -72,7 +72,7 @@ stages:
       displayName: 'Get Feed Credentials'  
       inputs:
         artifactsFeeds: '$(referencePipelineFeed)'
-        MavenServiceConnections: 'anypoint-exchange, avio-mule-ee-releases, avio-releases, mulesoft-releases'
+        MavenServiceConnections: 'avio-snapshots'
     - task: Maven@3
       displayName: 'Set Version'
       condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
