@@ -36,6 +36,9 @@
 						<server>${server}</server>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${muleVersion}</muleVersion>
+						<!-- Deploy User Parameter -->
+						<username>${cloudhub.username}</username>
+						<password>${cloudhub.password}</password>
 						<applicationName>${applicationName}</applicationName>
 						<environment>${environment}</environment>
 						<workerType>${workerType}</workerType>
